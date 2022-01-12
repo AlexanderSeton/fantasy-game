@@ -89,4 +89,10 @@ public class WizardTest {
         wizard.sustainDamage(10);
         assertEquals(90, wizard.getHitPoints());
     }
+
+    @Test
+    public void canCastSpell() {
+        wizard.cast("Fireball", wizard);
+        assertEquals(65, wizard.getHitPoints());
+    }
 }

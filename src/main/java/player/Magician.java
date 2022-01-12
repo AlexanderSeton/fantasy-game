@@ -64,4 +64,9 @@ public abstract class Magician extends Player{
             }
         }
     }
+
+    public void cast(String spell, Player player) {
+        int damage = this.spells.get(spell);
+        player.getHurt(damage);
+    }
 }

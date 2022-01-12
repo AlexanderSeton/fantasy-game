@@ -2,7 +2,7 @@ package player;
 
 import java.util.HashMap;
 
-import javafx.beans.value.WeakChangeListener;
+import room.enemy.Enemy;
 
 public abstract class Warrior extends Player {
 
@@ -34,8 +34,8 @@ public abstract class Warrior extends Player {
         return this.activeWeapon;
     }
 
-    public void fight(Player player) {
+    public void fight(Enemy enemy) {
         int damage = weapons.get(activeWeapon);
-        player.getHurt(damage);
+        enemy.getHurt(damage);
     }
 }

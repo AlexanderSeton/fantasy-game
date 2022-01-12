@@ -1,6 +1,7 @@
 package player;
 
 import player.creature.Creature;
+import room.enemy.Enemy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,8 +66,8 @@ public abstract class Magician extends Player{
         }
     }
 
-    public void cast(String spell, Player player) {
+    public void cast(String spell, Enemy enemy) {
         int damage = this.spells.get(spell);
-        player.getHurt(damage);
+        enemy.getHurt(damage);
     }
 }

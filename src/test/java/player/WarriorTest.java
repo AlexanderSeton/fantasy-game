@@ -26,7 +26,7 @@ public class WarriorTest {
         // name, hitPoints, treasure, weapons, activeWeapon
         barbarian = new Barbarian("Conan", 100, 0, weapons);
         dwarf = new Dwarf("Ian", 100, 0, weapons);
-        knight = new Knight("Arthur", 100, 0, weapons); 
+        knight = new Knight("Arthur", 100, 0, weapons);
     }
     
     @Test

@@ -1,5 +1,7 @@
 package player;
 
+import room.enemy.Enemy;
+
 public abstract class Player {
     private String name;
     private int hitPoints;
@@ -29,6 +31,10 @@ public abstract class Player {
 
     public int getTreasure() {
         return this.treasure;
+    }
+
+    public void addTreasure(int treasure) {
+        this.treasure += treasure;
     }
 
       public boolean getAlive() {

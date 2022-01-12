@@ -2,6 +2,8 @@ package player;
 
 import java.util.HashMap;
 
+import room.enemy.Enemy;
+
 public class Cleric extends Player{
 
     private HashMap<String, Integer> healingTools;
@@ -31,7 +33,7 @@ public class Cleric extends Player{
         return this.activeTool;
     }
 
-    public void wrathOfGod(Player player){
-        player.getHurt(20);
+    public void wrathOfGod(Enemy enemy){
+        enemy.getHurt(20);
     }
 }

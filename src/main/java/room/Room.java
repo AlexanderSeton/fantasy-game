@@ -80,13 +80,13 @@ public class Room {
             }
             if (player.getAlive() == false) {
                 System.out.println("PLAYER DEAD");
-                System.exit(0);
+                break;
             }
         }
         // assign room as completed & give player room treasure
         this.setCompleted();
         player.addTreasure(this.getTreasureAmount());
-        
+
     }
 
 }

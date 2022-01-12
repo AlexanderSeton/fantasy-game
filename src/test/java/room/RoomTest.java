@@ -17,6 +17,8 @@ import room.enemy.Enemy;
 public class RoomTest{
 
     private Room room;
+    private Room room2;
+    private Room room3;
     private Knight knight;
 
     @Before
@@ -25,10 +27,21 @@ public class RoomTest{
         weapons.put("sword", 25);
         weapons.put("hammer", 15);
         knight = new Knight("Arthur", 100, 0, weapons);
-        Enemy enemy = new Enemy("Ogre", 100, 10);
+        Enemy enemy = new Enemy("Ogre", 20, 10);
+        Enemy enemy2 = new Enemy("Dragon", 75, 30);
+        Enemy enemy3 = new Enemy("Alien Queen", 1000, 50);
         ArrayList<Enemy> enemies = new ArrayList<>();
         enemies.add(enemy);
+        ArrayList<Enemy> enemies2 = new ArrayList<>();
+        enemies2.add(enemy);
+        enemies2.add(enemy2);
+        ArrayList<Enemy> enemies3 = new ArrayList<>();
+        enemies3.add(enemy);
+        enemies3.add(enemy2);
+        enemies3.add(enemy3);
         room = new Room(1, "Dungeon", 50, enemies, knight);
+        room2 = new Room(1, "Dungeon", 100, enemies2, knight);
+        room3 = new Room(1, "Dungeon", 150, enemies3, knight);
     }
 
     @Test
@@ -59,7 +72,20 @@ public class RoomTest{
     @Test
     public void roomCanBePlayed() {
         room.playRoom(knight);
-        assertEquals(70, knight.getHitPoints());
+        assertEquals(100, knight.getHitPoints());
+    }
+
+    @Test
+    public void playerCanBeatTwoEnemies() {
+        
+        room2.playRoom(knight);
+        assertEquals(40, knight.getHitPoints());
+    }
+
+    @Test
+    public void roomCanBeLost() {
+        room3.playRoom(knight);
+        assertEquals(false, knight.getAlive());
     }
 
     @Test

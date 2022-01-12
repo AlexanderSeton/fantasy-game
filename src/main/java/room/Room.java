@@ -83,7 +83,6 @@ public class Room {
                 }   
             }
             if (player.getAlive() == false) {
-                System.out.println("PLAYER DEAD");
                 break;
             }
         }

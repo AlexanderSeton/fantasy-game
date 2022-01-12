@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.xml.ws.handler.MessageContext;
+
 import player.Player;
 import room.Room;
 
@@ -31,12 +33,24 @@ public class Game {
                 break;
             }
         }
+        String message;
         if (won == true) {
-            return "Congratulations you have won!\nScore: " + this.player.getTreasure() + "\nHealth Remaining: " + this.player.getHitPoints() + "\nPlayer type: " + this.player.getClass();
+            message = new StringBuilder()
+            .append("Congratulations, " + this.player.getName() + ", you have won!\n")
+            .append("Score: " + this.player.getTreasure() + "\n")
+            .append("Health Remaining: " + this.player.getHitPoints() + "\n")
+            .append("Character: " + this.player.getClass().toString().substring(13) + "\n")
+            .append("\n")
+            .toString();
         }
         else {
-            return "You fought valiantly, " + this.player.getName() + ", but you lost and the kingdom is in tatters. \n Your score is " + this.player.getTreasure() + "! \n Player Type: " + this.player.getClass();
+            message = new StringBuilder()
+            .append("You fought valiantly, " + this.player.getName() + ", but you lost and the kingdom is in tatters. \n")
+            .append("Your score is " + this.player.getTreasure() + "! \n")
+            .append("Player Type: " + this.player.getClass().toString().substring(13))
+            .append("\n")
+            .toString();
         }
+        return message;
     }
-
 }

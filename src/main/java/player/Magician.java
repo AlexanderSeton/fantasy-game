@@ -70,4 +70,8 @@ public abstract class Magician extends Player{
         int damage = this.spells.get(spell);
         enemy.getHurt(damage);
     }
+
+    public void fight(Enemy enemy) {
+        this.cast(spells.keySet().toArray()[0].toString(), enemy);
+    }
 }

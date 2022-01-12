@@ -36,4 +36,8 @@ public class Cleric extends Player{
     public void wrathOfGod(Enemy enemy){
         enemy.getHurt(20);
     }
+
+    public void fight(Enemy enemy){
+        this.wrathOfGod(enemy);
+    }
 }

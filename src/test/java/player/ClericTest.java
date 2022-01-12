@@ -2,6 +2,7 @@ package player;
 
 import org.junit.Before;
 import org.junit.Test;
+import room.enemy.Enemy;
 
 import java.util.HashMap;
 
@@ -11,6 +12,7 @@ public class ClericTest {
     
     private Cleric cleric;
     private Cleric cleric2;
+    private Enemy enemy;
 
     @Before
     public void before() {
@@ -19,6 +21,7 @@ public class ClericTest {
         healingTools.put("bandage", 15);
         cleric = new Cleric("Tom", 100, 0, healingTools);
         cleric2 = new Cleric("Ian", 100, 0, healingTools);
+        enemy = new Enemy("Dragon", 100, 1500);
     }
 
     @Test
@@ -52,8 +55,8 @@ public class ClericTest {
     }
 
     @Test
-    public void hasWrathOfGod() {
-//        cleric.wrathOfGod(cleric2);
-//        assertEquals(80, cleric2.getHitPoints());
+    public void canFight() {
+        cleric.fight(enemy);
+        assertEquals(80, enemy.getHitPoints());
     }
 }

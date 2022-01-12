@@ -67,16 +67,17 @@ public class Room {
         for (int i=0; i<this.enemies.size(); i++) {
             Enemy currentEnemy = this.enemies.get(i);
             while (player.getAlive() && this.enemies.get(i).getAlive()) {
-                // player attack
-                if (player instanceof Cleric) {
-                    ((Cleric) player).wrathOfGod(currentEnemy);
-                }
-                else if (player instanceof Warrior) {
-                    ((Warrior) player).fight(currentEnemy);
-                } else {
-                    String spellName = ((Magician) player).getSpells().keySet().toArray()[0].toString();
-                    ((Magician) player).cast(spellName, currentEnemy);
-                }
+                // // player attack
+                // if (player instanceof Cleric) {
+                //     ((Cleric) player).wrathOfGod(currentEnemy);
+                // }
+                // else if (player instanceof Warrior) {
+                //     ((Warrior) player).fight(currentEnemy);
+                // } else {
+                //     String spellName = ((Magician) player).getSpells().keySet().toArray()[0].toString();
+                //     ((Magician) player).cast(spellName, currentEnemy);
+                // }
+                player.fight(currentEnemy);
                 // enemy attack
                 if (currentEnemy.getAlive()){
                     currentEnemy.attack(player);

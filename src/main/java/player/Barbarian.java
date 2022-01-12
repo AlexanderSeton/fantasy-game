@@ -11,4 +11,6 @@ public class Barbarian extends Warrior {
     public String talk() {
         return "I am a barbarian";
     }
+
+    
 }

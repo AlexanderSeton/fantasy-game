@@ -1,8 +1,9 @@
 package player;
 
+import behaviours.IFight;
 import room.enemy.Enemy;
 
-public abstract class Player {
+public abstract class Player implements IFight {
     private String name;
     private int hitPoints;
     private int experiencePoints;
@@ -57,4 +58,6 @@ public abstract class Player {
             this.alive = false;
         }
     }
+
+    public abstract void fight(Enemy enemy);
 }

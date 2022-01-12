@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-import javax.sound.sampled.SourceDataLine;
-
 import org.junit.Before;
 import org.junit.Test;
 import player.creature.Creature;
+import room.enemy.Enemy;
 
 public class WizardTest {
     
     private Wizard wizard;
+    private Enemy enemy;
     private Creature creature;
     private Creature creature2;
 
@@ -33,6 +33,7 @@ public class WizardTest {
         spells.put("Fireball", 35);
         spells.put("Lightning Strike", 55);
         wizard = new Wizard("Merlin", 100, 100, creatures, spells);
+        enemy = new Enemy("Dragon", 100, 1500);
     }
     
     @Test
@@ -92,7 +93,7 @@ public class WizardTest {
 
     @Test
     public void canCastSpell() {
-//        wizard.cast("Fireball", wizard);
-//        assertEquals(65, wizard.getHitPoints());
+       wizard.fight(enemy);
+       assertEquals(45, enemy.getHitPoints());
     }
 }

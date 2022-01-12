@@ -19,11 +19,9 @@ public class WarriorTest {
 
     @Before 
     public void before() {
-
         HashMap<String, Integer> weapons = new HashMap<>();
         weapons.put("sword", 27);
         weapons.put("hammer", 15);
-        // name, hitPoints, treasure, weapons, activeWeapon
         barbarian = new Barbarian("Conan", 100, 0, weapons);
         dwarf = new Dwarf("Ian", 100, 0, weapons);
         knight = new Knight("Arthur", 100, 0, weapons);

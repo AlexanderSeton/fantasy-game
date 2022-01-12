@@ -22,13 +22,17 @@ public class Room {
     private int level;
     private boolean completed;
 
-    public Room(int level, String name, int treasureAmount, ArrayList<Enemy> enemies, Player player) {
+    public Room(int level, String name, int treasureAmount, ArrayList<Enemy> enemies) {
         this.name = name;
         this.treasureAmount = treasureAmount;
         this.enemies = enemies;
-        this.player = player;
+        this.player = null;
         this.level = level;
         this.completed = false;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public String getName() {
@@ -83,10 +87,9 @@ public class Room {
                 break;
             }
         }
-        // assign room as completed & give player room treasure
-        this.setCompleted();
-        player.addTreasure(this.getTreasureAmount());
-
+        if (player.getAlive()) {
+            this.setCompleted();
+            player.addTreasure(this.getTreasureAmount());
+        }
     }
-
 }

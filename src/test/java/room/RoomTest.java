@@ -39,9 +39,12 @@ public class RoomTest{
         enemies3.add(enemy);
         enemies3.add(enemy2);
         enemies3.add(enemy3);
-        room = new Room(1, "Dungeon", 50, enemies, knight);
-        room2 = new Room(1, "Dungeon", 100, enemies2, knight);
-        room3 = new Room(1, "Dungeon", 150, enemies3, knight);
+        room = new Room(1, "Dungeon", 50, enemies);
+        room2 = new Room(1, "Dungeon", 100, enemies2);
+        room3 = new Room(1, "Dungeon", 150, enemies3);
+        room.setPlayer(knight);
+        room2.setPlayer(knight);
+        room3.setPlayer(knight);
     }
 
     @Test
@@ -85,6 +88,7 @@ public class RoomTest{
     @Test
     public void roomCanBeLost() {
         room3.playRoom(knight);
+        // assertEquals(0, knight.getHitPoints());
         assertEquals(false, knight.getAlive());
     }
 

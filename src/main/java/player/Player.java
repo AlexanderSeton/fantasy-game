@@ -47,7 +47,7 @@ public abstract class Player {
     }
 
     public void checkAlive() {
-        if (this.hitPoints <=0) {
+        if (this.hitPoints <= 0) {
             this.alive = false;
         }
     }
